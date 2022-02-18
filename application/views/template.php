@@ -71,7 +71,7 @@
             App.init();
         });
     </script>
-    <script src="assets/js/custom.js"></script>
+    <script src="<?php echo base_url() ?>assets/assets/js/custom.js"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
