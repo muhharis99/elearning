@@ -4,20 +4,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Master extends CI_Controller {
 	function __construct(){
 		parent::__construct();
+		$this->load->model('Master_model');
 	}
-	
+// home
 	function index()
 	{
-		$data['isi'] = "content";
+		$data['isi'] = "master/mhome";
 		$this->load->view('template', $data);
 	}
 
 // kelas
 	function kelasCI()
 	{
+		$data['data'] = $this->db->get('tb_master_kelas');
 		$data['isi'] = "master/mkelas";
 		$this->load->view('template', $data);
 	}
+
 
 // jurusan
 	function jurusanCI()

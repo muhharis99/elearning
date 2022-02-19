@@ -8,7 +8,7 @@
                     </a>
                 </li>
                 <li class="nav-item theme-text">
-                    <a href="index.html" class="nav-link"> CORK </a>
+                    <a href="index.html" class="nav-link"> E-Learning </a>
                 </li>
             </ul>
 

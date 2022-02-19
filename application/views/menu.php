@@ -75,10 +75,10 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="components" data-parent="#accordionExample">
                             <li>
-                                <a href="component_tabs.html"> Guru </a>
+                                <a href="<?= base_url() ?>guru"> Guru </a>
                             </li>
                             <li>
-                                <a href="component_accordion.html"> Siswa </a>
+                                <a href="<?= base_url() ?>siswa"> Siswa </a>
                             </li>
                         </ul>
                     </li>
