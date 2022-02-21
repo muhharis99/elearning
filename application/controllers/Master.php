@@ -16,10 +16,53 @@ class Master extends CI_Controller {
 // kelas
 	function kelasCI()
 	{
+		
+		$data['data'] = $this->Master_model->view();
 		$data['isi'] = "master/mkelas";
 		$this->load->view('template', $data);
 	}
 
+	function saveKelas(){
+		if($this->Master_model->validation("save")){ // Jika validasi sukses atau hasil validasi adalah true
+			$this->Master_model->save(); // Panggil fungsi save() yang ada di SiswaModel.php
+			
+			// Load ulang view.php agar data yang baru bisa muncul di tabel pada view.php
+			$html = $this->load->view('master/vkelas', array('data'=>$this->Master_model->view()), true);
+
+			$callback = array(
+				'status'=>'sukses',
+				'pesan'=>'Data berhasil disimpan',
+				'html'=>$html
+			);
+		}else{
+			$callback = array(
+				'status'=>'gagal',
+				'pesan'=>validation_errors()
+			);
+		}
+		echo json_encode($callback);
+	}
+
+		function editKelas($id_kelas){
+			if($this->Master_model->validation("update")){ // Jika validasi sukses atau hasil validasi adalah true
+				$this->Master_model->edit($id_kelas); // Panggil fungsi edit() yang ada di SiswaModel.php
+				// Load ulang view.php agar data yang baru bisa muncul di tabel pada view.php
+
+				$html = $this->load->view('master/vkelas', array('data'=>$this->Master_model->view()), true);
+				
+				$callback = array(
+				'status'=>'sukses',
+				'pesan'=>'Data berhasil diubah',
+				'html'=>$html
+			);
+		}else{
+			$callback = array(
+				'status'=>'gagal',
+				'pesan'=>validation_errors()
+			);
+		}
+		echo json_encode($callback);
+	}
 
 // jurusan
 	function jurusanCI()
