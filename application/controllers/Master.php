@@ -16,7 +16,6 @@ class Master extends CI_Controller {
 // kelas
 	function kelasCI()
 	{
-		$data['data'] = $this->db->get('tb_master_kelas');
 		$data['isi'] = "master/mkelas";
 		$this->load->view('template', $data);
 	}

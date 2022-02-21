@@ -86,3 +86,5 @@
 
         multiCheck(c3);
     </script>
+
+<script src="<?= base_url('assets/assets/customjs/jskelas.js') ?>"></script>
