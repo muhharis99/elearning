@@ -1,3 +1,4 @@
+
 <script src="<?php echo base_url() ?>assets/assets/js/libs/jquery-3.1.1.min.js"></script>
     <script src="<?php echo base_url() ?>assets/bootstrap/js/popper.min.js"></script>
     <script src="<?php echo base_url() ?>assets/bootstrap/js/bootstrap.min.js"></script>
@@ -8,6 +9,12 @@
             App.init();
         });
     </script>
+    <script src="<?php echo base_url() ?>assets/plugins/highlight/highlight.pack.js"></script>
+    <script src="<?php echo base_url() ?>assets/assets/js/custom.js"></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="<?php echo base_url() ?>assets/assets/js/scrollspyNav.js"></script>
     <script src="<?php echo base_url() ?>assets/assets/js/custom.js"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
@@ -86,5 +93,12 @@
 
         multiCheck(c3);
     </script>
-
-<script src="<?= base_url('assets/assets/customjs/jskelas.js') ?>"></script>
+        <!-- Bootstrap core JavaScript-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo base_url() ?>assets/assets/js/delete.js"></script>
+<!-- BEGIN THEME GLOBAL STYLE -->
+    <script src="<?php echo base_url() ?>assets/assets/js/scrollspyNav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
+    <!-- <script src="<?php echo base_url() ?>assets/plugins/sweetalerts/sweetalert2.min.js"></script> -->
+    <script src="<?php echo base_url() ?>assets/plugins/sweetalerts/custom-sweetalert.js"></script>
+    <!-- END THEME GLOBAL STYLE -->   

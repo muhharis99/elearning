@@ -22,7 +22,12 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/plugins/table/datatable/custom_dt_custom.css">
     <!-- END PAGE LEVEL CUSTOM STYLES -->
     <link href="<?php echo base_url() ?>assets/assets/css/components/custom-modal.css" rel="stylesheet" type="text/css">
-    
-    <script>
-    var base_url = '<?= base_url() ?>' // Buat variabel base_url agar bisa di akses di semua file js
-    </script>
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="<?php echo base_url() ?>assets/assets/css/scrollspyNav.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url() ?>assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
+    <script src="<?php echo base_url() ?>assets/plugins/sweetalerts/promise-polyfill.js"></script>
+    <link href="<?php echo base_url() ?>assets/plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url() ?>assets/plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url() ?>assets/assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css">
+    <!-- END THEME GLOBAL STYLES -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/assets/css/elements/alert.css">
