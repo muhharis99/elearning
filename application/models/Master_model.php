@@ -84,4 +84,56 @@ class Master_model extends CI_Model{
     {
         $this->db->delete('tb_master_semester', ['id_semester' => $id]);
     }
+    // Mapel
+    function getAllMapel()
+    {
+        return $this->db->get('tb_master_mapel')->result_array();
+    }
+    function AddMapel($name){
+        $data = [
+            "mapel"  => $name
+        ];  
+        $result= $this->db->insert('tb_master_mapel',$data);
+        return $result;
+    }
+
+    function updateMapel($id,$name){
+        $data = [
+            "mapel"  => $name
+        ];  
+        $result=$this->db->where('id_mapel',$id);
+        $result=$this->db->update('tb_master_mapel',$data);
+        return $result;
+    }
+
+    function deleteMapel($id)
+    {
+        $this->db->delete('tb_master_mapel', ['id_mapel' => $id]);
+    }
+    // jenisujian
+    function getAllJenisujian()
+    {
+        return $this->db->get('tb_jenisujian')->result_array();
+    }
+    function AddJenisujian($name){
+        $data = [
+            "jenisujian"  => $name
+        ];  
+        $result= $this->db->insert('tb_jenisujian',$data);
+        return $result;
+    }
+
+    function updateJenisujian($id,$name){
+        $data = [
+            "jenisujian"  => $name
+        ];  
+        $result=$this->db->where('id_jenisujian',$id);
+        $result=$this->db->update('tb_jenisujian',$data);
+        return $result;
+    }
+
+    function deleteJenisujian($id)
+    {
+        $this->db->delete('tb_jenisujian', ['id_jenisujian' => $id]);
+    }
 }

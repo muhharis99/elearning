@@ -95,6 +95,7 @@
     </script>
         <!-- Bootstrap core JavaScript-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="<?php echo base_url() ?>assets/assets/js/delete.js"></script>
 <!-- BEGIN THEME GLOBAL STYLE -->
     <script src="<?php echo base_url() ?>assets/assets/js/scrollspyNav.js"></script>

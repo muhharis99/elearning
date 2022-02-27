@@ -16,10 +16,10 @@
         <table id="style-3" class="table style-3  table-hover">
           <thead>
             <tr>
-              <th width="10%">No</th>
-              <th width="40%">ID Jurusan</th>
+              <th width="5%">No</th>
+              <!-- <th width="40%">ID Jurusan</th> -->
               <th width="40%">Jurusan</th>
-              <th class="dt-no-sorting">Action</th>
+              <th width="20%">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -29,7 +29,7 @@
               ?>
               <tr>
                 <td><?= $no++; ?></td>
-                <td><?= $row['id_jurusan']; ?></td>
+                <!-- <td><?= $row['id_jurusan']; ?></td> -->
                 <td><?= $row['jurusan']; ?></td>
                 <td>
                     <!-- edit button -->
@@ -68,13 +68,7 @@
                 <input type="hidden" placeholder="" id="url" class=""></input>
                 <small class="form-text text-danger " id="salah"></small>
               <label for="jurusan">jurusan</label>
-              <select class="form-control" name="jurusan" id="jurusan" required>
-                  <option value="">-- Pilih jurusan --</option>
-                  <option value="Ipa">IPA</option>
-                  <option value="Ips">IPS</option>
-                  <option value="Agama">AGAMA</option>
-                  <option value="Bahasa">BAHASA</option>
-                </select>
+              <input class="form-control" type="text" id="jurusan" name="jurusan" required>
               <div class="valid-feedback"> Looks good! </div>
               <div class="invalid-feedback"> Please fill the name </div>
             </div>
@@ -84,7 +78,7 @@
           <div id="wait" style="display:none;position:relative;padding:2px;">
                        sedang diproses..<br><br>
                     </div>
-        <button onclick="kirim()" type="button" class="btn btn-primary" id="btn_upload">Save</button>
+        <input onclick="kirim()" type="submit" class="btn btn-primary" id="btn_upload" value="Simpan">
       </div>
       </form>
     </div>

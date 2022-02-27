@@ -16,10 +16,10 @@
         <table id="style-3" class="table style-3  table-hover">
           <thead>
             <tr>
-              <th width="10%">No</th>
-              <th width="40%">ID Kelas</th>
+              <th width="5%">No</th>
+              <!-- <th width="40%">ID Kelas</th> -->
               <th width="40%">Kelas</th>
-              <th class="dt-no-sorting">Action</th>
+              <th width="20%">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -29,7 +29,7 @@
               ?>
               <tr>
                 <td><?= $no++; ?></td>
-                <td><?= $row['id_kelas']; ?></td>
+                <!-- <td><?= $row['id_kelas']; ?></td> -->
                 <td><?= $row['kelas']; ?></td>
                 <td>
                     <!-- edit button -->
@@ -68,21 +68,7 @@
                 <input type="hidden" placeholder="" id="url" class=""></input>
                 <small class="form-text text-danger " id="salah"></small>
               <label for="kelas">Kelas</label>
-              <select class="form-control" name="kelas" id="kelas" required>
-                  <option value="">-- Pilih Kelas --</option>
-                  <option value="I">I</option>
-                  <option value="II">II</option>
-                  <option value="III">III</option>
-                  <option value="IV">IV</option>
-                  <option value="V">V</option>
-                  <option value="VI">VI</option>
-                  <option value="VII">VII</option>
-                  <option value="VIII">VIII</option>
-                  <option value="IX">IX</option>
-                  <option value="X">X</option>
-                  <option value="XI">XI</option>
-                  <option value="XII">XII</option>
-                </select>
+              <input class="form-control" type="text" id="kelas" name="kelas" required>
               <div class="valid-feedback"> Looks good! </div>
               <div class="invalid-feedback"> Please fill the name </div>
             </div>
@@ -92,7 +78,7 @@
           <div id="wait" style="display:none;position:relative;padding:2px;">
                        sedang diproses..<br><br>
                     </div>
-        <button onclick="kirim()" type="button" class="btn btn-primary" id="btn_upload">Save</button>
+        <input onclick="kirim()" type="submit" class="btn btn-primary" id="btn_upload" value="Simpan">
       </div>
       </form>
     </div>

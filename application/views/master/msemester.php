@@ -16,10 +16,10 @@
         <table id="style-3" class="table style-3  table-hover">
           <thead>
             <tr>
-              <th width="10%">No</th>
-              <th width="40%">ID semester</th>
+              <th width="5%">No</th>
+              <!-- <th width="40%">ID semester</th> -->
               <th width="40%">semester</th>
-              <th class="dt-no-sorting">Action</th>
+              <th width="20% class="dt-no-sorting">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -29,7 +29,7 @@
               ?>
               <tr>
                 <td><?= $no++; ?></td>
-                <td><?= $row['id_semester']; ?></td>
+                <!-- <td><?= $row['id_semester']; ?></td> -->
                 <td><?= $row['semester']; ?></td>
                 <td>
                     <!-- edit button -->
@@ -51,7 +51,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tambah Data semester</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Semester</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -68,12 +68,7 @@
                 <input type="hidden" placeholder="" id="url" class=""></input>
                 <small class="form-text text-danger " id="salah"></small>
               <label for="semester">semester</label>
-              <select class="form-control" name="semester" id="semester" required>
-                  <option value="">-- Pilih semester --</option>
-                  <option value="I">I</option>
-                  <option value="II">II</option>
-                  <option value="III">III</option>
-                </select>
+              <input class="form-control" type="text" id="semester" name="semester" required>
               <div class="valid-feedback"> Looks good! </div>
               <div class="invalid-feedback"> Please fill the name </div>
             </div>
@@ -83,7 +78,7 @@
           <div id="wait" style="display:none;position:relative;padding:2px;">
                        sedang diproses..<br><br>
                     </div>
-        <button onclick="kirim()" type="button" class="btn btn-primary" id="btn_upload">Save</button>
+        <input onclick="kirim()" type="submit" class="btn btn-primary" id="btn_upload" value="Simpan">
       </div>
       </form>
     </div>

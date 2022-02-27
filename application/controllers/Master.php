@@ -153,17 +153,91 @@ class Master extends CI_Controller {
 // mapel
 	function mapelCI()
 		{
+			$data['allmapel'] = $this->Master_model->getAllMapel();
 			$data['isi'] = "master/mmapel";
 			$this->load->view('template', $data);
 		}
+	function AddMapel()
+	{
+		
+		$this->form_validation->set_rules('mapel', '"mapel"', 'required');
 
-// jenis ujian
-	function jenisujianCI()
+		if ($this->form_validation->run() == false) {
+           	echo validation_errors();
+        } else {
+			$name = $this->input->post('mapel',true);
+	
+			$result= $this->Master_model->AddMapel($name);
+			echo json_decode($result);
+			$this->session->set_flashdata('info', '<div class="alert alert-light-success border-0 mb-4" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close" data-dismiss="alert"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button> <strong>Success!</strong> Lorem Ipsum is simply dummy text of the printing. </div>');
+        }		
+	}
+	function editMapel()
+	{
+		
+		$this->form_validation->set_rules('mapel', '"mapel"', 'required');
+		
+		if ($this->form_validation->run() == false) {
+			echo validation_errors();
+		} else {
+			$id = $this->input->post('id_mapel',true);
+			$name = $this->input->post('mapel',true);
+
+			$result= $this->Master_model->UpdateMapel($id,$name);
+			echo json_decode($result);
+			$this->session->set_flashdata('info', '<div class="alert alert-light-info border-0 mb-4" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close" data-dismiss="alert"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button> <strong>Info!</strong> Lorem Ipsum is simply dummy text of the printing. </div>');
+		}
+	}
+    function deleteMapel($id)
+    {
+		$this->Master_model->deleteMapel($id);
+        $this->session->set_flashdata('info', '<div class="alert alert-light-danger border-0 mb-4" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close" data-dismiss="alert"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button> <strong>Error!</strong> Lorem Ipsum is simply dummy text of the printing. </div>');
+        redirect(base_url('mapel'));
+    }
+// jenis jenisujian
+	function JenisujianCI()
 		{
+			$data['alljenisujian'] = $this->Master_model->getAllJenisujian();
 			$data['isi'] = "master/mjenisujian";
 			$this->load->view('template', $data);
 		}
+	function AddJenisujian()
+	{
+		
+		$this->form_validation->set_rules('jenisujian', '"jenisujian"', 'required');
 
+		if ($this->form_validation->run() == false) {
+           	echo validation_errors();
+        } else {
+			$name = $this->input->post('jenisujian',true);
+	
+			$result= $this->Master_model->Addjenisujian($name);
+			echo json_decode($result);
+			$this->session->set_flashdata('info', '<div class="alert alert-light-success border-0 mb-4" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close" data-dismiss="alert"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button> <strong>Success!</strong> Lorem Ipsum is simply dummy text of the printing. </div>');
+        }		
+	}
+	function editJenisujian()
+	{
+		
+		$this->form_validation->set_rules('jenisujian', '"jenisujian"', 'required');
+		
+		if ($this->form_validation->run() == false) {
+			echo validation_errors();
+		} else {
+			$id = $this->input->post('id_jenisujian',true);
+			$name = $this->input->post('jenisujian',true);
+
+			$result= $this->Master_model->UpdateJenisujian($id,$name);
+			echo json_decode($result);
+			$this->session->set_flashdata('info', '<div class="alert alert-light-info border-0 mb-4" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close" data-dismiss="alert"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button> <strong>Info!</strong> Lorem Ipsum is simply dummy text of the printing. </div>');
+		}
+	}
+    function deleteJenisujian($id)
+    {
+		$this->Master_model->deleteJenisujian($id);
+        $this->session->set_flashdata('info', '<div class="alert alert-light-danger border-0 mb-4" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close" data-dismiss="alert"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button> <strong>Error!</strong> Lorem Ipsum is simply dummy text of the printing. </div>');
+        redirect(base_url('jenisujian'));
+    }
 // perangkat
 	function perangkatCI()
 		{
