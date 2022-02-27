@@ -57,7 +57,7 @@ $route['home'] = 'Master';
 $route['kelas'] = 'Master/kelasCI';
 $route['jurusan'] = 'Master/jurusanCI';
 $route['mapel'] = 'Master/mapelCI';
-$route['perangkat'] = 'Master/perangkatCI';
+$route['jenisperangkat'] = 'Master/jenisperangkatCI';
 $route['semester'] = 'Master/semesterCI';
 $route['jenisujian'] = 'Master/jenisujianCI';
 // 

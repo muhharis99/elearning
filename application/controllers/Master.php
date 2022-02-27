@@ -211,7 +211,7 @@ class Master extends CI_Controller {
         } else {
 			$name = $this->input->post('jenisujian',true);
 	
-			$result= $this->Master_model->Addjenisujian($name);
+			$result= $this->Master_model->AddJenisujian($name);
 			echo json_decode($result);
 			$this->session->set_flashdata('info', '<div class="alert alert-light-success border-0 mb-4" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close" data-dismiss="alert"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button> <strong>Success!</strong> Lorem Ipsum is simply dummy text of the printing. </div>');
         }		
@@ -239,9 +239,47 @@ class Master extends CI_Controller {
         redirect(base_url('jenisujian'));
     }
 // perangkat
-	function perangkatCI()
+	function jenisperangkatCI()
 		{
+			$data['alljenisperangkat'] = $this->Master_model->getAllJenisperangkat();
 			$data['isi'] = "master/mperangkat";
 			$this->load->view('template', $data);
 		}
+	function AddJenisperangkat()
+	{
+		
+		$this->form_validation->set_rules('jenisperangkat', '"jenisperangkat"', 'required');
+
+		if ($this->form_validation->run() == false) {
+           	echo validation_errors();
+        } else {
+			$name = $this->input->post('jenisperangkat',true);
+	
+			$result= $this->Master_model->AddJenisperangkat($name);
+			echo json_decode($result);
+			$this->session->set_flashdata('info', '<div class="alert alert-light-success border-0 mb-4" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close" data-dismiss="alert"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button> <strong>Success!</strong> Lorem Ipsum is simply dummy text of the printing. </div>');
+        }		
+	}
+	function editJenisperangkat()
+	{
+		
+		$this->form_validation->set_rules('jenisperangkat', '"jenisperangkat"', 'required');
+		
+		if ($this->form_validation->run() == false) {
+			echo validation_errors();
+		} else {
+			$id = $this->input->post('id_jenisperangkat',true);
+			$name = $this->input->post('jenisperangkat',true);
+
+			$result= $this->Master_model->UpdateJenisperangkat($id,$name);
+			echo json_decode($result);
+			$this->session->set_flashdata('info', '<div class="alert alert-light-info border-0 mb-4" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close" data-dismiss="alert"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button> <strong>Info!</strong> Lorem Ipsum is simply dummy text of the printing. </div>');
+		}
+	}
+    function deleteJenisperangkat($id)
+    {
+		$this->Master_model->deleteJenisperangkat($id);
+        $this->session->set_flashdata('info', '<div class="alert alert-light-danger border-0 mb-4" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close" data-dismiss="alert"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button> <strong>Error!</strong> Lorem Ipsum is simply dummy text of the printing. </div>');
+        redirect(base_url('jenisperangkat'));
+    }
 }

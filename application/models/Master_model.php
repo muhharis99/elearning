@@ -136,4 +136,30 @@ class Master_model extends CI_Model{
     {
         $this->db->delete('tb_jenisujian', ['id_jenisujian' => $id]);
     }
+    // jenisperangkat
+    function getAllJenisperangkat()
+    {
+        return $this->db->get('tb_jenisperangkat')->result_array();
+    }
+    function AddJenisperangkat($name){
+        $data = [
+            "jenisperangkat"  => $name
+        ];  
+        $result= $this->db->insert('tb_jenisperangkat',$data);
+        return $result;
+    }
+
+    function updateJenisperangkat($id,$name){
+        $data = [
+            "jenisperangkat"  => $name
+        ];  
+        $result=$this->db->where('id_jenisperangkat',$id);
+        $result=$this->db->update('tb_jenisperangkat',$data);
+        return $result;
+    }
+
+    function deleteJenisperangkat($id)
+    {
+        $this->db->delete('tb_jenisperangkat', ['id_jenisperangkat' => $id]);
+    }
 }

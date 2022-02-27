@@ -58,7 +58,7 @@
                                 <a href="<?= base_url() ?>jenisujian"> Jenis Ujian </a>
                             </li>
                             <li>
-                                <a href="<?= base_url() ?>perangkat"> Jenis Perangkat </a>
+                                <a href="<?= base_url() ?>jenisperangkat"> Jenis Perangkat </a>
                             </li>
                         </ul>
                     </li>
