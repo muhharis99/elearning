@@ -1,4 +1,3 @@
-
 <div class="row layout-spacing">
   <div class="col-lg-12">
     <div class="statbox widget box box-shadow">
@@ -12,7 +11,7 @@
       <div class="widget-content widget-content-area">
         <div class="text-left">
           <!-- <button type="button" class="btn btn-primary mb-2 mr-2" data-toggle="modal" data-target="#exampleModal" onclick="panggilmodal('tambah')"> Tambah Data </button> -->
-          <a href="#" class="btn btn-primary mb-2 mr-2" onclick="panggilmodal('AddKelas')"><span class="fa fa-plus-circle"></span> Tambah Siswa</a>
+          <a href="#" class="btn btn-primary mb-2 mr-2" onclick="panggilmodal('AddKelas')"><span class="fa fa-plus-circle"></span> Tambah Data</a>
         </div>
         <table id="style-3" class="table style-3  table-hover">
           <thead>
@@ -30,13 +29,13 @@
               ?>
               <tr>
                 <td><?= $no++; ?></td>
-                <td><?= $row['id']; ?></td>
+                <td><?= $row['id_kelas']; ?></td>
                 <td><?= $row['kelas']; ?></td>
                 <td>
                     <!-- edit button -->
-                    <a type="button" class="btn btn-info mb-2" href="#" onclick="panggilmodal('edit','<?= $row['id'] ?>','<?= $row['kelas'] ?>')">Edit</a> &nbsp;
+                    <a type="button" class="btn btn-info mb-2" href="#" onclick="panggilmodal('edit','<?= $row['id_kelas'] ?>','<?= $row['kelas'] ?>')">Edit</a> &nbsp;
                     <!-- delete button hidden -->
-                    <a type="button" class="btn btn-danger mb-2 tombol-hapus" href="<?= 'Master/deleteKelas/'.$row['id'] ?>">Delete</a>
+                    <a type="button" class="btn btn-danger mb-2 tombol-hapus" href="<?= 'Master/deleteKelas/'.$row['id_kelas'] ?>">Delete</a>
                     <!-- end hidden -->
                 </td>
                 </tr>
@@ -65,7 +64,7 @@
           <div class="form-row">
             <div class="col-md-12 mb-4">
                 <input type="hidden" placeholder="" name="mode" id="mode" value='' class=""></input>
-                <input type="hidden" placeholder="" name="id" id="id" value='' class=""></input>
+                <input type="hidden" placeholder="" name="id_kelas" id="id_kelas" value='' class=""></input>
                 <input type="hidden" placeholder="" id="url" class=""></input>
                 <small class="form-text text-danger " id="salah"></small>
               <label for="kelas">Kelas</label>
@@ -110,17 +109,15 @@ function panggilmodal(mode,id=null,name=null){
     if (mode=='AddKelas'){
         var url='<?= base_url('Master/AddKelas/');?>'
         $('#url').val(url)
-        $('#id').val('')
+        $('#id_kelas').val('')
         $('#kelas').val('')
-        $('#judulmodal').text('Tambah siswa')
-        $('#btn_upload').text('Tambah siswa')
+        $('#btn_upload').text('Tambah kelas')
     }else if(mode=='edit'){
         var url='<?= base_url('Master/editKelas/');?>'
         $('#url').val(url)
-        $('#id').val(id)
+        $('#id_kelas').val(id)
         $('#kelas').val(name)
-        $('#btn_upload').text('Update siswa')
-        $('#judulmodal').text('Update siswa')
+        $('#btn_upload').text('Update kelas')
     
     }else{  
     }
